@@ -10,7 +10,7 @@ public class Person {
     public Person(String name, String family) {
         this.name = name;
         this.family = family;
-        this.number =new ArrayList<>();
+        this.number = new ArrayList<>();
     }
 
     @Override
@@ -23,12 +23,12 @@ public class Person {
     }
 
     public String viewNum() {
-        StringBuilder numbers=new StringBuilder();
+        StringBuilder numbers = new StringBuilder();
         for (com.company.Number number : this.number) {
-            numbers.append(number.toString()+ "\n");
+            numbers.append(number.toString() + "\n");
             System.out.println("                   ");
         }
-        return numbers.toString() ;
+        return numbers.toString();
     }
 
 

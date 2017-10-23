@@ -9,16 +9,16 @@ import java.util.ArrayList;
 
 public class Service {
 
-    private  UI mView = UI.getINSTANCE();
+    private UI mView = UI.getINSTANCE();
     private Model mModel = Model.getINSTANCE();
 
     private static Service INSTANCE = new Service();
 
-    public static Service getINSTANCE(){
+    public static Service getINSTANCE() {
         return INSTANCE;
     }
 
-    public void getContacts(){
+    public void getContacts() {
 
     }
 
@@ -26,7 +26,7 @@ public class Service {
         mModel.saveContactsInDb(personArrayList);
     }
 
-    public void showPersons(ArrayList<Person> personArrayList){
+    public void showPersons(ArrayList<Person> personArrayList) {
         mView.showSavedPersons(personArrayList);
     }
 }

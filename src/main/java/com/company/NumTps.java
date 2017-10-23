@@ -1,5 +1,5 @@
 package com.company;
 
-public enum  NumTps {
-    HOME,WORK,MOBILE
+public enum NumTps {
+    HOME, WORK, MOBILE
 }
