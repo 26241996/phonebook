@@ -23,6 +23,13 @@ public class Number {
         return new Number(num,numTps);
     }
 
+    public String getNum() {
+        return num;
+    }
+
+    public NumTps getNumTps() {
+        return numTps;
+    }
 
     @Override
     public String toString() {

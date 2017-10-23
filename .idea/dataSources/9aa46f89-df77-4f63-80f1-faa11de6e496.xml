@@ -16,5 +16,52 @@
     <schema id="10" parent="1" name="SYSIBM"/>
     <schema id="11" parent="1" name="SYSPROC"/>
     <schema id="12" parent="1" name="SYSSTAT"/>
+    <table id="13" parent="2" name="NUMBER"/>
+    <table id="14" parent="2" name="PERSON"/>
+    <column id="15" parent="13" name="PERSON_ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="13" name="TYPE">
+      <Position>2</Position>
+      <DataType>VARCHAR(52)|12</DataType>
+    </column>
+    <column id="17" parent="13" name="NUMBER">
+      <Position>3</Position>
+      <DataType>VARCHAR(52)|12</DataType>
+    </column>
+    <column id="18" parent="13" name="NUMBER_ID">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <key id="19" parent="13" name="SQL171023130711910">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NUMBER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="14" name="PERSON_ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <column id="21" parent="14" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(52)|12</DataType>
+    </column>
+    <column id="22" parent="14" name="FAMILY">
+      <Position>3</Position>
+      <DataType>VARCHAR(52)|12</DataType>
+    </column>
+    <key id="23" parent="14" name="SQL171023124551100">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PERSON_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

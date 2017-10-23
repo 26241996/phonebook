@@ -31,8 +31,13 @@ public class Person {
         return numbers.toString() ;
     }
 
+
     public void setNumber(com.company.Number number) {
         this.number.add(number);
+    }
+
+    public ArrayList<Number> getNumbers() {
+        return number;
     }
 
     public String getName() {
@@ -43,4 +48,6 @@ public class Person {
     public String getFamily() {
         return family;
     }
+
+
 }
