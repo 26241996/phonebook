@@ -1,8 +1,11 @@
 package view;
 
-import com.company.Number;
-import com.company.Person;
-import controler.Service;
+import controller.ContactController;
+import model.PhoneNumberEnum;
+import model.Number;
+import model.Person;
+import service.Service;
+import report.Report;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ public class UI {
 
     Scanner scanner = new Scanner(System.in);
 
+    ContactController contactController = new ContactController();
+
     public static UI getINSTANCE() {
         return INSTANCE;
     }
@@ -28,10 +33,25 @@ public class UI {
     }
 
     public void showMenu() throws SQLException {
-        System.out.println("show menu\n1.insert Contacts");
+        System.out.println("    ----------------     " +
+                "\nShow menu: " +
+                "\n1.insert Contacts");
+//                "\n2.Report" +
+//                "\n3.Search");
         int input = scanner.nextInt();
-        if (input == 1) {
-            getContactsFromUserToSave();
+        switch (input) {
+            case 1:
+                getContactsFromUserToSave();
+                break;
+//            case 2:
+//                Report report = new Report();
+//                report.Build();
+//                break;
+//            case 3:
+//                break;
+            default:
+                System.out.println("Invalid input ! please try again \n");
+                showMenu();
         }
     }
 
@@ -50,7 +70,7 @@ public class UI {
             Person person = new Person(name, family);
             while (flag.equals("yes")) {
 
-                person.setNumber(new Number());
+                person.setNumber(contactController.manegeNumbersType());
                 System.out.println("do you need to add more number??? , yes/no");
                 flag = scanner.nextLine();
             }
@@ -68,7 +88,7 @@ public class UI {
 
             for (int j = 0; j < personArrayList.get(i).getNumbers().size(); j++) {
                 System.out.println(personArrayList.get(i).getNumbers().get(j).getNum());
-                System.out.println(personArrayList.get(i).getNumbers().get(j).getNumTps());
+                System.out.println(personArrayList.get(i).getNumbers().get(j).getPhoneNumberEnum());
             }
         }
     }

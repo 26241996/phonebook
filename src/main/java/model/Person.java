@@ -1,11 +1,11 @@
-package com.company;
+package model;
 
 import java.util.ArrayList;
 
 public class Person {
     private String name;
     private String family;
-    private ArrayList<com.company.Number> number;
+    private ArrayList<Number> number;
 
     public Person(String name, String family) {
         this.name = name;
@@ -22,9 +22,9 @@ public class Person {
                 '}';
     }
 
-    public String viewNum() {
+    private String viewNum() {
         StringBuilder numbers = new StringBuilder();
-        for (com.company.Number number : this.number) {
+        for (Number number : this.number) {
             numbers.append(number.toString() + "\n");
             System.out.println("                   ");
         }
@@ -32,7 +32,7 @@ public class Person {
     }
 
 
-    public void setNumber(com.company.Number number) {
+    public void setNumber(Number number) {
         this.number.add(number);
     }
 

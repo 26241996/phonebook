@@ -1,7 +1,7 @@
-package controler;
+package service;
 
-import com.company.Person;
-import model.Model;
+import model.Person;
+import dao.ContactDao;
 import view.UI;
 
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Service {
 
     private UI mView = UI.getINSTANCE();
-    private Model mModel = Model.getINSTANCE();
+    private ContactDao mContactDao = ContactDao.getINSTANCE();
 
     private static Service INSTANCE = new Service();
 
@@ -23,7 +23,7 @@ public class Service {
     }
 
     public void savePersons(ArrayList<Person> personArrayList) throws SQLException {
-        mModel.saveContactsInDb(personArrayList);
+        mContactDao.saveContactsInDb(personArrayList);
     }
 
     public void showPersons(ArrayList<Person> personArrayList) {
