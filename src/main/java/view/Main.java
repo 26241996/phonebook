@@ -8,6 +8,7 @@ public class Main {
 
         UI ui = UI.getINSTANCE();
         ui.showMenu();
+        System.out.println("    ***Contacts inserted successfully***    ");
     }
 
 
